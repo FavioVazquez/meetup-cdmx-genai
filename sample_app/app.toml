@@ -1,0 +1,9 @@
+[App]
+Name = "ai.h2o.wave.personal-assistant"
+Version = "0.0.2"
+Title = "Personal Assistant"
+Description = "This is my personal assistant chatbot"
+Tags = ["GENERATIVE_AI"]
+
+[Runtime]
+Module = "app"
