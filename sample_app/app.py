@@ -1,6 +1,6 @@
 ## Tasks:
 # 1. H2OGPTe API Key 
-# 2. Integrate our Hashtag prompt
+# 2. Integrate a Hashtag prompt
 # 3. Update our chatbot personality 
 
 
@@ -11,8 +11,9 @@ from h2o_wave import app, Q, ui, on, run_on, data, copy_expando, main
 from h2ogpte import H2OGPTE
 
 
-REMOTE_ADDRESS = ''
-API_KEY = ''  # Update 1
+
+REMOTE_ADDRESS = 'https://h2ogpte.internal-genai.dedicated.h2o.ai/'
+API_KEY = 'sk-CBfSw6IzS4psAPsxfmaojcPWAtqCs3fe5X6IktSOpKzUusJQ'  # Update 1
 NAME = 'John Doe'
 TITLE = 'Senior Analyst'
 
@@ -125,25 +126,25 @@ async def launch(q):
     
     ## Hands On Component - Lets Incorporate our Hashtags prompt from Lab 1 into our Wave App. 
     
-    extracted_hashtags = h2ogpte.extract_data(
-    text_context_list=chunks,
-    system_prompt = "You are a helpful AI Assistant and your goal is to extract hashtags",
-    prompt_extract= " Return only 3 hashtags about the person this profile belongs to as a JSON with a single field called hashtags. Do not use the persons name as a hashtag"
-    )
-
-    try:
-        hashtags_json = json.loads(extracted_hashtags.content[0])
-        HASHTAGS = hashtags_json['hashtags']
-        HASHTAGS = " ".join(HASHTAGS)
-    except:
-        HASHTAGS = ""
+    # extracted_hashtags = h2ogpte.extract_data(
+    # text_context_list=chunks,
+    # system_prompt = "",
+    # prompt_extract= ""
+    # )
+    #
+    # try:
+    #     hashtags_json = json.loads(extracted_hashtags.content[0])
+    #     HASHTAGS = hashtags_json['hashtags']
+    #     HASHTAGS = " ".join(HASHTAGS)
+    # except:
+    #     HASHTAGS = ""
     
     q.page['header'] = ui.header_card(
         box='header',
         title='Personal AI Assistant',
         subtitle="",
         image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYiPLBie36OVSxyLYJAFQrykIDPkkft-0cBA&usqp=CAU',
-        items=[ui.persona(title=NAME, subtitle=TITLE, caption=HASHTAGS, size='m',
+        items=[ui.persona(title=NAME, subtitle=TITLE, size='m', #caption=HASHTAGS
                           image='https://images.pexels.com/photos/7485787/pexels-photo-7485787.jpeg')]
     )
     

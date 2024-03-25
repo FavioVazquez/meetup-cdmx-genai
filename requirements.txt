@@ -1,0 +1,5 @@
+h2ogpte==1.3.11
+openai
+h2o-wave==1.1.1
+python-dotenv
+jupyter
