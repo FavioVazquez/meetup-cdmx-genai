@@ -17,8 +17,14 @@
 
 ## Requisitos:
 
+```bash
+pip install -r requirements.txt
+```
+
 - Python 3.10+
 - Jupyter
 - H2OGPTe
 - H2O Wave
+- OpenAI
+- python-dotenv
 
