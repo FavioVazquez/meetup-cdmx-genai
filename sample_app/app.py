@@ -193,6 +193,6 @@ def get_chat_answer(h2ogpte, chat_session_id, question):
     with h2ogpte.connect(chat_session_id) as session:
         ## Hands On Component - Update System Personality 
         reply = session.query(question, timeout=10600,
-            system_prompt=SYSTEM_PROMPT+ PERSONALITY_PROMPT ) 
+            system_prompt=SYSTEM_PROMPT+ PERSONALITY_PROMPT)
         answer = reply.content
     return answer
