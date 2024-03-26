@@ -107,7 +107,6 @@ async def launch(q):
 
     extracted_name = h2ogpte.extract_data(
         text_context_list=chunks,
-        llm="gpt-35-turbo-1106",
         system_prompt = 'You are a helpful AI Assistant and your goal is to extract names',
         prompt_extract= "Return only the name of the person this profile belongs to as a JSON"
     )
@@ -117,7 +116,6 @@ async def launch(q):
     
     extracted_title = h2ogpte.extract_data(
         text_context_list=chunks,
-        llm="gpt-35-turbo-1106",
         system_prompt = 'You are a helpful AI Assistant and your goal is to extract professional titles',
         prompt_extract= "Return only the current position title of the person this profile belongs to as a JSON with a single field called title"
     )
