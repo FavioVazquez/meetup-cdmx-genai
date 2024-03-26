@@ -12,8 +12,8 @@ from h2ogpte import H2OGPTE
 
 
 
-REMOTE_ADDRESS = 'https://h2ogpte.internal-genai.dedicated.h2o.ai/'
-API_KEY = 'sk-CBfSw6IzS4psAPsxfmaojcPWAtqCs3fe5X6IktSOpKzUusJQ'  # Update 1
+REMOTE_ADDRESS = 'https://h2ogpte.genai-training.h2o.ai/'
+API_KEY = 'sk-n31515HatpYuHLHHd43fYed1cMFAXUkUM4Q6WQS99Bo2tcH8'  # Update 1
 NAME = 'John Doe'
 TITLE = 'Senior Analyst'
 
@@ -107,6 +107,7 @@ async def launch(q):
 
     extracted_name = h2ogpte.extract_data(
         text_context_list=chunks,
+        llm="gpt-35-turbo-1106",
         system_prompt = 'You are a helpful AI Assistant and your goal is to extract names',
         prompt_extract= "Return only the name of the person this profile belongs to as a JSON"
     )
@@ -116,6 +117,7 @@ async def launch(q):
     
     extracted_title = h2ogpte.extract_data(
         text_context_list=chunks,
+        llm="gpt-35-turbo-1106",
         system_prompt = 'You are a helpful AI Assistant and your goal is to extract professional titles',
         prompt_extract= "Return only the current position title of the person this profile belongs to as a JSON with a single field called title"
     )
