@@ -13,7 +13,7 @@ from h2ogpte import H2OGPTE
 
 
 REMOTE_ADDRESS = 'https://h2ogpte.genai-training.h2o.ai/'
-API_KEY = 'sk-n31515HatpYuHLHHd43fYed1cMFAXUkUM4Q6WQS99Bo2tcH8'  # Update 1
+API_KEY = ''  # Update 1
 NAME = 'John Doe'
 TITLE = 'Senior Analyst'
 
